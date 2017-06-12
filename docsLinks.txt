@@ -1,0 +1,1 @@
+http://lintool.github.io/warcbase-docs/Spark-Extracting-Domain-Level-Plain-Text/#plain-text-minus-boilerplate
