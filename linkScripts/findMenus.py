@@ -13,7 +13,7 @@ inputData = open(rawFile, "rb")
 inputText = inputData.read()
 
 startFix = "<html>" + inputText.split("<html>", 1)[1]
-endFix = startFix.rsplit("</html", 1)[0] + "</html>"
+endFix = startFix.rsplit("</html>", 1)[0] + "</html>"
 
 pageCount = 0
 for thing in endFix.split("<html>"):
