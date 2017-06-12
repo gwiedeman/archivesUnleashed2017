@@ -1,0 +1,25 @@
+import org.warcbase.spark.rdd.RecordRDD._
+import org.warcbase.spark.matchbox.{RemoveHTML, RecordLoader}
+
+RecordLoader.loadArchives("/home/ubuntu/rio/ARCHIVEIT-7227-CRAWL_SELECTED_SEEDS-JOB237586-20160924044926182-00074.warc.gz", sc)
+  .keepValidPages()
+  .map(r => (r.getCrawlDate, r.getDomain, r.getUrl, r.getContentString))
+  .saveAsTextFile("/home/ubuntu/warc-test")
+  
+import org.warcbase.spark.rdd.RecordRDD._
+import org.warcbase.spark.matchbox.{RemoveHTML, RecordLoader}
+
+RecordLoader.loadArchives("/home/ubuntu/warcbase/warcbase-core/src/test/resources/arc/example.arc.gz", sc)
+  .keepValidPages()
+  .map(r => (r.getCrawlDate, r.getDomain, r.getUrl, r.getContentString))
+  .saveAsTextFile("/home/ubuntu/warc-test")
+  
+  
+  
+import org.warcbase.spark.rdd.RecordRDD._
+import org.warcbase.spark.matchbox.{RemoveHTML, RecordLoader}
+
+RecordLoader.loadArchives("/home/ubuntu/rio/ARCHIVEIT-7227-CRAWL_SELECTED_SEEDS-JOB237586-20160924044926182-00074.warc.gz", sc)
+  .keepValidPages()
+  .map(r => (r.getCrawlDate, r.getDomain, r.getUrl, RemoveHTML(r.getContentString)))
+  .saveAsTextFile("/home/ubuntu/all-text")
