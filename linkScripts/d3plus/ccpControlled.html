@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3plus with all dependencies -->
+<script src="js/d3plus.full.min.js"></script>
+
+<!-- create container element for visualization -->
+<center><h2>Controlled Anchor tags in 4 2005 CPP WARCs</h2></center>
+<div id="viz"></div>
+
+<script>
+
+  // sample data array
+  var data = [{"count": 3331, "parents": "li"}, {"count": 27377, "parents": "td"}, {"count": 583, "parents": "body"}, {"count": 659, "parents": "br"}, {"count": 8386, "parents": "div"}, {"count": 14628, "parents": "p"}, {"count": 558, "parents": "[document]"}, {"count": 222, "parents": "strong"}, {"count": 604, "parents": "div=cpocgutterarticlemenubody"}, {"count": 119, "parents": "center"}, {"count": 24, "parents": "hr"}, {"count": 29, "parents": "form"}, {"count": 130, "parents": "img"}, {"count": 13, "parents": "input"}, {"count": 26, "parents": "noscript"}, {"count": 18, "parents": "a"}, {"count": 11, "parents": "h1"}, {"count": 103, "parents": "big"}, {"count": 1, "parents": "address"}, {"count": 7, "parents": "em"}, {"count": 52, "parents": "dt"}, {"count": 245, "parents": "dd"}, {"count": 4, "parents": "fieldset"}, {"count": 3237, "parents": "blockquote"}, {"count": 23, "parents": "sup"}, {"count": 4, "parents": "ol"}, {"count": 45, "parents": "th"}, {"count": 2, "parents": "ul"}];
+
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(data)  // data to use with the visualization
+    .type("bar")   // visualization type
+    .id("parents")         // key for which our data is unique on
+    .x("parents")
+    .y("count")
+    .draw();            // finally, draw the visualization!
+
+</script>

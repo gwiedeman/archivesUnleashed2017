@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="js/d3.js"></script>
+<script src="js/d3plus.js"></script>
+
+<center><h3>Links in Tables (&lt;td&gt;)</h3></center>
+
+<div id="viz"></div>
+
+<script>
+
+  var data = [{"name": "Hard Links (http...)", "value": 3597}, {"name": "Relative Links", "value": 11070}]
+
+  d3plus.viz()
+    .container("#viz")
+    .data(data)
+    .type("pie")
+    .id("name")
+    .size("value")
+    .draw()
+
+</script>
