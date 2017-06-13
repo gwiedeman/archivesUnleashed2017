@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3plus with all dependencies -->
+<script src="js/d3plus.full.min.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+
+$.getJSON("/home/ubuntu/output/findMenusOut.json", function(json) {
+  data = json,
+  success = function(data){
+    d3plus.viz()
+      .container("#viz")
+      .data(data)
+      .type("bar")
+      .id("parents")
+      .x("parents")
+      .y("count")
+      .draw()
+   }
+})
+
+</script>
+
+
