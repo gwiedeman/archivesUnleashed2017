@@ -7,7 +7,7 @@ parents = []
 hrefs = []
 
 ignoreList = ["img"]
-controlList = ["b", "small", "span", "h1,", "h2", "h3", "h4", "h5", "i"]
+controlList = ["font", "b", "small", "span", "h1,", "h2", "h3", "h4", "h5", "i"]
 
 def controlCheck(element, controlList):
 	if element.name.lower().strip() in controlList:
