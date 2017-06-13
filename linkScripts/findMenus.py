@@ -10,7 +10,7 @@ controlList = ["b", "small", "span", "h1,", "h2", "h3", "h4", "h5", "i"]
 
 resultsDir = "/home/ubuntu"
 for folder in os.listdir(resultsDir):
-	if "results_2017_London" in folder:
+	if "results_cpp_2017" in folder:
 		fullPath = os.path.join(resultsDir, folder, "part-00000")
 
 
@@ -46,7 +46,7 @@ for folder in os.listdir(resultsDir):
 
 inputData.close()
 
-outPath = "/home/ubuntu/archivesUnleashed2017/output/allWarcs.json"
+outPath = "/home/ubuntu/archivesUnleashed2017/output/ccpWarcs.json"
 outputFile = open(outPath, "w")
 json.dump(parents, outputFile)
 outputFile.close()
