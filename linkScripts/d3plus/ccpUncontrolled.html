@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3plus with all dependencies -->
+<script src="js/d3plus.full.min.js"></script>
+
+<!-- create container element for visualization -->
+<center><h2>Uncontrolled Anchor tags in 4 2005 CPP WARCs</h2></center>
+<div id="viz"></div>
+
+<script>
+
+  // sample data array
+  var data = [{"count": 11212, "parents": "span"}, {"count": 1815, "parents": "li"}, {"count": 1709, "parents": "b"}, {"count": 575, "parents": "body"}, {"count": 14875, "parents": "td"}, {"count": 10370, "parents": "p"}, {"count": 6322, "parents": "font"}, {"count": 417, "parents": "[document]"}, {"count": 203, "parents": "strong"}, {"count": 8055, "parents": "div"}, {"count": 391, "parents": "br"}, {"count": 604, "parents": "div=cpocgutterarticlemenubody"}, {"count": 74, "parents": "center"}, {"count": 21, "parents": "h2"}, {"count": 131, "parents": "h3"}, {"count": 12, "parents": "hr"}, {"count": 18, "parents": "i"}, {"count": 45, "parents": "img"}, {"count": 26, "parents": "noscript"}, {"count": 4, "parents": "a"}, {"count": 3, "parents": "h1"}, {"count": 19, "parents": "small"}, {"count": 25, "parents": "big"}, {"count": 1, "parents": "address"}, {"count": 239, "parents": "dd"}, {"count": 13, "parents": "h5"}, {"count": 12, "parents": "form"}, {"count": 4, "parents": "input"}, {"count": 3165, "parents": "blockquote"}, {"count": 23, "parents": "sup"}, {"count": 48, "parents": "dt"}, {"count": 1, "parents": "h4"}, {"count": 4, "parents": "ol"}, {"count": 3, "parents": "em"}, {"count": 45, "parents": "th"}, {"count": 2, "parents": "ul"}];
+
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(data)  // data to use with the visualization
+    .type("bar")   // visualization type
+    .id("parents")         // key for which our data is unique on
+    .x("parents")
+    .y("count")
+    .draw();            // finally, draw the visualization!
+
+</script>

@@ -36,7 +36,7 @@ for folder in os.listdir(resultsDir):
 				href = link.get('href', None)
 				hrefs.append(href)
 				if len(link.parent) > 0:
-					if link.parent.lower() in ignoreList:
+					if link.parent.name.lower() in ignoreList:
 						pass
 					else:
 					
