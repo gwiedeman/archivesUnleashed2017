@@ -39,7 +39,7 @@ for folder in os.listdir(resultsDir):
 						for slice in menuLinks:
 							if slice["value"] == "Relative Links":
 								slice["value"] = slice["value"] + 1
-				elif patentTag.lower() =="div" or patentTag.lower() =="p":
+				elif parentTag.lower() =="div" or parentTag.lower() =="p":
 					if href.startswith("http"):
 						for slice in contentLinks:
 							if slice["value"] == "Hard Links (http...)":
