@@ -32,22 +32,22 @@ for folder in os.listdir(resultsDir):
 					hrefs.append(href)
 					parentTag = link.parent.name
 					if parentTag.lower() == "li":
-						if href.startswith("http"):
+						if href.lower().startswith("http"):
 							for slice in menuLinks:
-								if slice["value"] == "Hard Links (http...)":
+								if slice["name"] == "Hard Links (http...)":
 									slice["value"] = slice["value"] + 1
 						else:
 							for slice in menuLinks:
-								if slice["value"] == "Relative Links":
+								if slice["name"] == "Relative Links":
 									slice["value"] = slice["value"] + 1
 					elif parentTag.lower() =="div" or parentTag.lower() =="p":
-						if href.startswith("http"):
+						if href.lower().startswith("http"):
 							for slice in contentLinks:
-								if slice["value"] == "Hard Links (http...)":
+								if slice["name"] == "Hard Links (http...)":
 									slice["value"] = slice["value"] + 1
 						else:
 							for slice in contentLinks:
-								if slice["value"] == "Relative Links":
+								if slice["name"] == "Relative Links":
 									slice["value"] = slice["value"] + 1
 					print contentLinks
 					print menuLinks
