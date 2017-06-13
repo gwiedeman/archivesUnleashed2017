@@ -44,5 +44,5 @@ inputData.close()
 
 outPath = "/home/ubuntu/archivesUnleashed2017/output/findMenusOut.json"
 outputFile = open(outPath, "w")
-json.dums(parents, outputFile)
+json.dump(parents, outputFile)
 outputFile.close()
