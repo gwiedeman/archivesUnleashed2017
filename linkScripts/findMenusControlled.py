@@ -58,7 +58,7 @@ for folder in os.listdir(resultsDir):
 			print parents
 
 
-inputData.close()
+		inputData.close()
 
 outPath = "/home/ubuntu/archivesUnleashed2017/output/ccpContolled.json"
 outputFile = open(outPath, "w")
