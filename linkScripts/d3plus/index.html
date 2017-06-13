@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3plus with all dependencies -->
+<script src="js/d3plus.full.min.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+
+  // sample data array
+  var data = [
+    {"count": 100, "parents": "alpha"},
+    {"count": 70, "parents": "beta"},
+    {"count": 40, "parents": "gamma"},
+    {"count": 15, "parents": "delta"},
+    {"count": 5, "parents": "epsilon"},
+    {"count": 1, "parents": "zeta"}
+  ];
+
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(data)  // data to use with the visualization
+    .type("bar")   // visualization type
+    .id("parents")         // key for which our data is unique on
+    .x("parents")
+    .y("count")
+    .draw();            // finally, draw the visualization!
+
+</script>

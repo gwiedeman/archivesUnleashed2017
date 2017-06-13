@@ -27,11 +27,11 @@ for thing in endFix.split("<html>"):
 		
 		parentMatch = False
 		for item in parents:
-			if  parentTag in item:
+			if item["parents"] == parentTag:
 				parentMatch = True
-				item[1] = item[1] + 1
+				item["count"] = item["count"]  + 1
 		if parentMatch == False:
-			parents.append([parentTag, 1])
+			parents.append({"count": 1, "parents": parentTag})
 		
 	print "Total Links: " + str(linkCount)
 	pageCount += 1
