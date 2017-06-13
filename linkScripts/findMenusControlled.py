@@ -17,7 +17,10 @@ def controlCheck(element, controlList):
 
 resultsDir = "/home/ubuntu"
 for folder in os.listdir(resultsDir):
+<<<<<<< HEAD
 	print folder
+=======
+>>>>>>> a15e5dfb214db2b5f9e28079e27aadb9aaedf10d
 	if "results_cpp_2017" in folder:
 		fullPath = os.path.join(resultsDir, folder, "part-00000")
 
