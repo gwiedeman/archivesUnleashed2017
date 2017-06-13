@@ -43,6 +43,6 @@ for thing in endFix.split("<html>"):
 inputData.close()
 
 outPath = "/home/ubuntu/archivesUnleashed2017/output/findMenusOut.json"
-outputFile = open(outPath, "rb")
-outputFile.write(json.dumps(parents))
+outputFile = open(outPath, "w")
+json.dums(parents, outputFile)
 outputFile.close()
