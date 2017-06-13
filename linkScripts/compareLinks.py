@@ -28,28 +28,29 @@ for folder in os.listdir(resultsDir):
 			for link in soup("a"):
 				linkCount += 1
 				href = link.get('href', None)
-				hrefs.append(href)
-				parentTag = link.parent.name
-				if parentTag.lower() == "li":
-					if href.startswith("http"):
-						for slice in menuLinks:
-							if slice["value"] == "Hard Links (http...)":
-								slice["value"] = slice["value"] + 1
-					else:
-						for slice in menuLinks:
-							if slice["value"] == "Relative Links":
-								slice["value"] = slice["value"] + 1
-				elif parentTag.lower() =="div" or parentTag.lower() =="p":
-					if href.startswith("http"):
-						for slice in contentLinks:
-							if slice["value"] == "Hard Links (http...)":
-								slice["value"] = slice["value"] + 1
-					else:
-						for slice in contentLinks:
-							if slice["value"] == "Relative Links":
-								slice["value"] = slice["value"] + 1
-				print contentLinks
-				print menuLinks
+				if not href is None:
+					hrefs.append(href)
+					parentTag = link.parent.name
+					if parentTag.lower() == "li":
+						if href.startswith("http"):
+							for slice in menuLinks:
+								if slice["value"] == "Hard Links (http...)":
+									slice["value"] = slice["value"] + 1
+						else:
+							for slice in menuLinks:
+								if slice["value"] == "Relative Links":
+									slice["value"] = slice["value"] + 1
+					elif parentTag.lower() =="div" or parentTag.lower() =="p":
+						if href.startswith("http"):
+							for slice in contentLinks:
+								if slice["value"] == "Hard Links (http...)":
+									slice["value"] = slice["value"] + 1
+						else:
+							for slice in contentLinks:
+								if slice["value"] == "Relative Links":
+									slice["value"] = slice["value"] + 1
+					print contentLinks
+					print menuLinks
 
 
 inputData.close()
