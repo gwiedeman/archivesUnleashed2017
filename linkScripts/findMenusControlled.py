@@ -11,8 +11,7 @@ controlList = ["b", "small", "span", "h1,", "h2", "h3", "h4", "h5", "i"]
 
 def controlCheck(element, controlList):
 	if element.name.lower().strip() in controlList:
-		print element.name.lower().strip()
-		controlCheck(element.parent, controlList)
+		return controlCheck(element.parent, controlList)
 	else:
 		return element
 
