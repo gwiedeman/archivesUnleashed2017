@@ -35,21 +35,22 @@ for folder in os.listdir(resultsDir):
 				linkCount += 1
 				href = link.get('href', None)
 				hrefs.append(href)
-				if link.parent.lower() in ignoreList:
-					pass
-				else:
-				
-					parentElement = controlCheck(link.parent)
+				if not link.parent is None:
+					if link.parent.lower() in ignoreList:
+						pass
+					else:
 					
-					parentTag = parentElement.name			
+						parentElement = controlCheck(link.parent)
+					
+						parentTag = parentElement.name			
 						
-					parentMatch = False
-					for item in parents:
-						if item["parents"] == parentTag:
-							parentMatch = True
-							item["count"] = item["count"]  + 1
-					if parentMatch == False:
-						parents.append({"count": 1, "parents": parentTag})
+						parentMatch = False
+						for item in parents:
+							if item["parents"] == parentTag:
+								parentMatch = True
+								item["count"] = item["count"]  + 1
+						if parentMatch == False:
+							parents.append({"count": 1, "parents": parentTag})
 				
 			print "Link Count: " + str(linkCount)
 			pageCount += 1
