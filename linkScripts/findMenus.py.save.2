@@ -1,0 +1,23 @@
+from bs4 import BeautifulSoup
+import os
+
+rawFile = "/home/ubuntu/warc-test/part-00000"
+
+inputData = open(rawFile, "rb")
+inputText = inputData.read()
+
+startFix = "<html>" + inputText.split("<html>", 1)[1]
+endFix = startFix.rsplit("</html", 1)[0] + "</html>"
+
+count = 0
+for thing in endFix.split("<html>"):
+	page = "<html>" + thing
+	
+soup = BeautifulSoup("<html>data</html>")
+	count += 1
+	print page
+print count
+
+inputData.close()
+
+
