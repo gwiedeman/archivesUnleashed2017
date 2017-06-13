@@ -40,7 +40,7 @@ for folder in os.listdir(resultsDir):
 						pass
 					else:
 					
-						parentElement = controlCheck(link.parent)
+						parentElement = controlCheck(link.parent, controlList)
 					
 						parentTag = parentElement.name			
 						
