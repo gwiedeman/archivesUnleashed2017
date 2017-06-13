@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import os
+import json
 
 linkCount = 0
 parents = []
@@ -41,4 +42,7 @@ for thing in endFix.split("<html>"):
 
 inputData.close()
 
-
+outPath = "/home/ubuntu/archivesUnleashed2017/output/findMenusOut.json"
+outputFile = open(outPath, "rb")
+outputFile.write(json.dumps(parents))
+outputFile.close()
