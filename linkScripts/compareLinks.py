@@ -31,7 +31,7 @@ for folder in os.listdir(resultsDir):
 				if not href is None:
 					hrefs.append(href)
 					parentTag = link.parent.name
-					if parentTag.name.lower() == "li":
+					if parentTag.lower() == "li":
 						if href.startswith("http"):
 							for slice in menuLinks:
 								if slice["value"] == "Hard Links (http...)":
@@ -40,7 +40,7 @@ for folder in os.listdir(resultsDir):
 							for slice in menuLinks:
 								if slice["value"] == "Relative Links":
 									slice["value"] = slice["value"] + 1
-					elif parentTag.name.lower() =="div" or parentTag.name.lower() =="p":
+					elif parentTag.lower() =="div" or parentTag.lower() =="p":
 						if href.startswith("http"):
 							for slice in contentLinks:
 								if slice["value"] == "Hard Links (http...)":
