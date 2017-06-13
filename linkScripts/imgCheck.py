@@ -33,4 +33,4 @@ for folder in os.listdir(resultsDir):
 					parentTag = link.parent.name
 					if parentTag.lower() == "img":
 						print str(link.parent)
-						
+						print "\n"
