@@ -7,7 +7,7 @@ hrefs = []
 
 controlList = ["b", "small", "span", "h1,", "h2", "h3", "h4", "h5", "i"]
 
-rawFile = "/home/ubuntu/warc-test/part-00000"
+rawFile = "/home/ubuntu/results_2017_London/part-00000"
 
 inputData = open(rawFile, "rb")
 inputText = inputData.read()
