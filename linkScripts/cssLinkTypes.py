@@ -31,7 +31,7 @@ for folder in os.listdir(resultsDir):
 				if not href is None:
 					hrefs.append(href)
 					parentTag = link.parent.name
-					if ".js" in href.lower():
+					if ".css" in href.lower():
 						if href.lower().startswith("http"):
 							for slice in menuLinks:
 								if slice["name"] == "Hard Links (http...)":
