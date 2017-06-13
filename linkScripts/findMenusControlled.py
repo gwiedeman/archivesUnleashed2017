@@ -17,7 +17,7 @@ def controlCheck(element, controlList):
 
 resultsDir = "/home/ubuntu"
 for folder in os.listdir(resultsDir):
-	if "results_2017_London" in folder:
+	if "results_ccp_2017" in folder:
 		fullPath = os.path.join(resultsDir, folder, "part-00000")
 
 
@@ -60,7 +60,7 @@ for folder in os.listdir(resultsDir):
 
 inputData.close()
 
-outPath = "/home/ubuntu/archivesUnleashed2017/output/allWarcsContolled.json"
+outPath = "/home/ubuntu/archivesUnleashed2017/output/ccpContolled.json"
 outputFile = open(outPath, "w")
 json.dump(parents, outputFile)
 outputFile.close()
