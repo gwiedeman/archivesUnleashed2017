@@ -9,7 +9,7 @@ hrefs = []
 controlList = ["b", "small", "span", "h1,", "h2", "h3", "h4", "h5", "i"]
 
 resultsDir = "/home/ubuntu"
-for folder in os.path.listdir(resultsDir):
+for folder in os.listdir(resultsDir):
 	if "results_2017_London" in folder:
 		fullPath = os.path.join(resultsDir, folder, "part-00000")
 
