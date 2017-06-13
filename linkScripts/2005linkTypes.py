@@ -11,7 +11,7 @@ controlList = ["b", "small", "span", "h1,", "h2", "h3", "h4", "h5", "i"]
 
 resultsDir = "/home/ubuntu"
 for folder in os.listdir(resultsDir):
-	if "results_cpp_2017" in folder:
+	if "results_2017_London" in folder:
 		fullPath = os.path.join(resultsDir, folder, "part-00000")
 
 
@@ -44,7 +44,7 @@ for folder in os.listdir(resultsDir):
 
 inputData.close()
 
-menuOut = "/home/ubuntu/archivesUnleashed2017/output/allCPPLinkTypes.json"
+menuOut = "/home/ubuntu/archivesUnleashed2017/output/allRioLinkTypes.json"
 outputFile1 = open(menuOut, "w")
 json.dump(menuLinks, outputFile1)
 outputFile1.close()
